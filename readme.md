@@ -6,37 +6,22 @@ This repository is an PyTorch implementation of the paper [Recorrupted-to-Recorr
 
 ## 1.Recorrupted-to-Recorrupted (R2R) Scheme
 
-For each noisy image $y=x+n$, where $n\sim\mathcal{N}(0,\Sigma_x)$, R2R generates paired data $(\hat{y},\tilde{y})$ by
-$$
-\widehat{y}=y+Az,\widetilde{y}=y-Bz,
-$$
-where $z\sim \mathcal{N}(0,I)$ is independent from $n$ and $AB^T=\Sigma_x$.
+![image](https://user-images.githubusercontent.com/53853529/144895097-2f361e8e-317b-44ef-a45f-b64cf201a00a.png)
 
-**Theorem 1.** Let $f_\theta$ denote the network parameterized by $\theta$. It holds that 
-$$
-\mathbb{E}_{x,y,z}\|f_\theta(\hat y)-\tilde y\|^2=\mathbb{E}_{x,y,z}\|f_\theta(\hat y)-x\| + const.
-$$
-*Example 1.* $n$ is additive white Gaussian  noise (AWGN): $n\sim \mathcal{N}(0,\sigma^2I)$. In our experiments, we  generate R2R training samples by
-$$
-\hat y = y +\frac12 \sigma z, \tilde y = y - 2\sigma  z.
-$$
-*Example 2.* $n\sim\mathcal{N}(0,\Sigma_x)$ is real image noise, where $\Sigma_x = diag (\beta_1 x+\beta_2)$,  $\beta_1$ and $\beta_2$ are two scalars. In our experiments, we  generate R2R training samples by
-$$
-\hat y = y + 2\sqrt{\Sigma_x}z, \tilde y = y -\frac12 \sqrt{\Sigma_x}z.
-$$
-In practice, $\Sigma_x$ is unavailable and only $\beta_1$ and $\beta_2$ are provided. We approximate $\Sigma_x$ by $diag(\beta_1y+\beta_2)$. 
 
 ## 2.Experimental Results
 
 Table 1. Quantitative comparison, in PSNR(dB)/SSIM, of different methods for AWGN removal on BSD68. The compared methods are categorized according to the type of training samples.  
 
-![image-20211206215025443](C:\Users\pangt\AppData\Roaming\Typora\typora-user-images\image-20211206215025443.png)
+![image](https://user-images.githubusercontent.com/53853529/144895572-98b2b2bb-79b7-4316-936b-d057491a68a7.png)
+
 
 
 
 Table 2. Quantitative comparison, in PSNR(dB)/SSIM, of different non-learning and unsupervised methods for denoising real-world images from SIDD.  
 
-![image-20211206215236971](C:\Users\pangt\AppData\Roaming\Typora\typora-user-images\image-20211206215236971.png)
+![image](https://user-images.githubusercontent.com/53853529/144895637-4885b5b1-793c-4a7e-89e3-7a1fe56c7d48.png)
+
 
 ## 3.Implementations
 
