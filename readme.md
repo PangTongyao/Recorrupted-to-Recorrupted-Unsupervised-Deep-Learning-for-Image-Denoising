@@ -38,7 +38,7 @@ Table 2. Quantitative comparison, in PSNR(dB)/SSIM, of different non-learning an
 Train R2R model for AWGN removal with noise level $\sigma =25$:
 
 ```
-python3 train_AWGN.py --prepare_data --noiseL 25 --training R2R
+python3 train_AWGN.py --prepare_data --noiseL 25 --val_noiseL 25 --training R2R
 ```
 
 ## 4.Citation
