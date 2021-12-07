@@ -18,7 +18,7 @@ class DnCNN(nn.Module):
         self.dncnn = nn.Sequential(*layers)
     def forward(self, x):
         out = self.dncnn(x)
-        return out
+        return x-out
 
 
 
