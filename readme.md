@@ -41,7 +41,7 @@ Train R2R model for AWGN removal with noise level $\sigma =25$:
 python3 train_AWGN.py --prepare_data --noiseL 25 --val_noiseL 25 --training R2R
 ```
 
-### (3). The code for real world image denoising on SIDD dataset can be found [here](https://github.com/huanzheng551803/Real_R2R_denoising)
+### (3). The code for real world image denoising on SIDD dataset can be found [here](https://github.com/huanzheng551803/Real_R2R_denoising).
 ## 4.Citation
 
 ```
